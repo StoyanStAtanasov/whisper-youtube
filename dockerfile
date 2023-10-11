@@ -10,6 +10,10 @@ FROM pytorch/pytorch:latest
 # Set the working directory is /workspace in the pytorch container
 #WORKDIR /app
 
+# install git so we can install the requirements
+RUN apt update
+RUN apt install -y git
+
 # Copy the requirements file into the container
 COPY requirements.txt .
 
